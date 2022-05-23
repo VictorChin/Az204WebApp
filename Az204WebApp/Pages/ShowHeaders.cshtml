@@ -1,0 +1,29 @@
+﻿@page
+@model Az204WebApp.Pages.ShowHeadersModel
+@{
+}
+
+<div class="container-fluid">
+    <Table class="table">
+
+        <thead>
+            <tr>
+                <th scope="col">
+                    Header Name
+                </th>
+                <th scope="col">
+                    Value
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach(var headerItem in  HttpContext.Request.Headers.OrderBy(pair=>pair.Key))
+        {
+        <tr>
+            <td>@headerItem.Key</td>
+            <td>@headerItem.Value</td>
+        </tr>
+        }
+        </tbody>
+    </Table>
+</div>

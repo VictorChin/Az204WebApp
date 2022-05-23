@@ -1,0 +1,30 @@
+﻿@page
+@model Az204WebApp.Pages.ConfigurationPropertiesModel
+@{
+
+}
+
+<div class="container-fluid">
+    <Table class="table">
+
+        <thead>
+            <tr>
+                <th scope="col">
+                    Config Name
+                </th>
+                <th scope="col">
+                    Value
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach(var configItem in Model.Config.AsEnumerable().OrderBy(pair=>pair.Key))
+        {
+        <tr>
+            <td>@configItem.Key</td>
+            <td>@configItem.Value</td>
+        </tr>
+        }
+        </tbody>
+    </Table>
+</div>
