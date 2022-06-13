@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 // Add Azure App Configuration to the container.
-#region App Configuration Dependency
+#region App Configuration Dependency SomeChange
 var azAppConfigConnection = builder.Configuration["AppConfig"];
 if (!string.IsNullOrEmpty(azAppConfigConnection))
 {
